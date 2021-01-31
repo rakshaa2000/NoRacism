@@ -3,8 +3,6 @@ import discord
 import random
 from trie.Trie import Trie
 from dotenv import load_dotenv
-from discord.ext import commands
-
 
 load_dotenv()
 TOKEN = os.getenv('TOKEN')
@@ -36,10 +34,11 @@ def buildTrie():
 def punish_user(user_id):
     user_id = '<@' + str(user_id) + '>'
     responses = [
+        "{} - We don't use racist slurs here, or anywhere",
         "Hey now {}, watch your mouth.",
-        "Hey {}, you violated the SafeSpaceBot rules.",
         "We don't use that kind of language here, {}."
     ]
+
     choice = random.choice(responses)
     choice = choice.format(user_id)
 
