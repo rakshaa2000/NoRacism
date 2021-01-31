@@ -67,6 +67,7 @@ async def on_message(message):
                 isClean = False
                 break
         if not isClean:
+            await message.delete()
             await message.channel.send(punish_user(author_id))
 
 
